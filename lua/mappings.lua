@@ -9,6 +9,8 @@ map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+map("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Explorer" })
+
 -- Copilot Mappings
 map("n", "<leader>zc", ":CopilotChat<CR>", { desc = "Copilot Chat Toggle" })
 map("v", "<leader>ze", ":CopilotChatExplain<CR>", { desc = "Copilot Explain Code" })
