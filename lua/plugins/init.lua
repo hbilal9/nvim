@@ -52,4 +52,16 @@ return {
       require "configs.treesitter"
     end,
   },
+
+  -- Github Copilot
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      {"github/copilot.vim"},
+      {"nvim-lua/plenary.nvim", branch = "master"},
+    },
+    event = {"BufReadPre", "BufNewFile"},
+    build = "make tiktoken", -- Only needed for Linux/MacOS
+    opts = {},
+  },
 }
