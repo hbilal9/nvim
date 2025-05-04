@@ -16,8 +16,10 @@ map({ "n", "v" }, "<Space>", "<Nop>", opts)
 map("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Explorer" })
 
 
--- Save file with Cmd + S
-map("n", "<C-s>", ":w<CR>", { desc = "Save File" })
+-- Save with both Ctrl+S and Cmd+S
+map({"n"}, "<C-s>", ":w<CR>", { desc = "Save File" })
+map({"i"}, "<C-s>", "<ESC>:w<CR>a", { desc = "Save File" })
+map({"n", "i", "v"}, "<D-s>", "<ESC>:w<CR>", { desc = "Save File" })
 
 -- Copilot Mappings
 map("n", "<leader>zc", ":CopilotChat<CR>", { desc = "Copilot Chat Toggle" })

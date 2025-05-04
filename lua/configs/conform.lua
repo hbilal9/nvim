@@ -8,7 +8,7 @@ local options = {
     javascriptreact = { "prettier" },
     typscriptreact = { "prettier" },
     typescript = { "prettier" },
-    python = { "black", "isort" },
+    python = { "ruff_format", "isort" },
     php = { "php-cs-fixer" },
   },
 

@@ -21,15 +21,5 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWritePost", "InsertLeave" }, {
   end,
 })
 
--- Configure flake8 options
-lint.linters.flake8 = {
-  cmd = "flake8",
-  args = {
-    "--max-line-length=100",
-    "--format=%(path)s:%(row)d:%(col)d:%(code)s:%(text)s",
-  },
-  stdin = true,
-  append_fname = true,
-  stream = "stdout",
-  ignore_exitcode = true,
-}
+-- change flake8 max line length to 120
+lint.linters.flake8.args = { "--max-line-length=120" }
