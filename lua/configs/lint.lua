@@ -20,3 +20,16 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWritePost", "InsertLeave" }, {
     lint.try_lint()
   end,
 })
+
+-- Configure flake8 options
+lint.linters.flake8 = {
+  cmd = "flake8",
+  args = {
+    "--max-line-length=100",
+    "--format=%(path)s:%(row)d:%(col)d:%(code)s:%(text)s",
+  },
+  stdin = true,
+  append_fname = true,
+  stream = "stdout",
+  ignore_exitcode = true,
+}
