@@ -64,4 +64,8 @@ return {
     build = "make tiktoken", -- Only needed for Linux/MacOS
     opts = {},
   },
+  {
+    "numToStr/Comment.nvim",
+    event = {"BufReadPre", "BufNewFile"},
+  }
 }
