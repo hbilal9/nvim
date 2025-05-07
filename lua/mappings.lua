@@ -7,6 +7,7 @@ local opts = { noremap = true, silent = true }
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map("i", "jj", "<ESC>")
 
 -- disable the spacebar default behavior in Normal and Visual mode
 map({ "n", "v" }, "<Space>", "<Nop>", opts)
@@ -20,6 +21,16 @@ map("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Explorer" })
 map({"n"}, "<C-s>", ":w<CR>", { desc = "Save File" })
 map({"i"}, "<C-s>", "<ESC>:w<CR>a", { desc = "Save File" })
 map({"n", "i", "v"}, "<D-s>", "<ESC>:w<CR>", { desc = "Save File" })
+
+-- Telescope Diagnostics
+local actions = require("telescope.actions")
+local builtin = require("telescope.builtin")    
+map("n", "<leader>fd", function()
+    builtin.diagnostics({
+      bufnr = 0,         -- Only current buffer
+      previewer = false, -- No code preview window
+    })
+  end, { desc = "Diagnostics" })
 
 -- Copilot Mappings
 map("n", "<leader>zc", ":CopilotChat<CR>", { desc = "Copilot Chat Toggle" })
