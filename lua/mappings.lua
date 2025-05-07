@@ -32,6 +32,16 @@ map("n", "<leader>fd", function()
     })
   end, { desc = "Diagnostics" })
 
+-- toggle wrapping lines on off
+map("n", "<leader>ww", function()
+  vim.wo.wrap = not vim.wo.wrap
+  if vim.wo.wrap then
+    print("Line wrapping enabled")
+  else
+    print("Line wrapping disabled")
+  end
+end, { desc = "Toggle Line Wrapping" })
+
 -- Copilot Mappings
 map("n", "<leader>zc", ":CopilotChat<CR>", { desc = "Copilot Chat Toggle" })
 map("v", "<leader>ze", ":CopilotChatExplain<CR>", { desc = "Copilot Explain Code" })
